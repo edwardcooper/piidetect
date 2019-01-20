@@ -113,6 +113,10 @@ word2vec_pipe.fit(data["Text"],data['Target'] )
 You can also use RandomizedSearchCV to hyperparameter selection. (This is going to run for a long time.)
 ```
 from sklearn.model_selection import RandomizedSearchCV
+from piidetect.pipeline import word_embedding, text_clean
+from sklearn.pipeline import Pipeline
+from sklearn.linear_model import LogisticRegression
+
 
 logit_clf_word2vec = LogisticRegression(solver = "lbfgs", max_iter = 10000)
 
