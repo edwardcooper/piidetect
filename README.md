@@ -85,7 +85,7 @@ from piidetect.pipeline import word_embedding
 model = word_embedding(algo_name = "word2vec",size = 100, min_count = 1, workers =2)
 model.fit(data['Text'])
 ```
-## How to use piidetect to building a pipeline for PII detection. 
+## How to use piidetect to build a pipeline for PII detection. 
 Before you start to train an end-to-end PII detector, you need to create binary labels 
 for ML models.
 ```
