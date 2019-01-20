@@ -1,4 +1,10 @@
-
+# 0 denote no pii
+# 1 denote pii exists
+def binary_pii(label):
+    pii_label = 0
+    if label != "None":
+        pii_label = 1
+    return pii_label 
 
 # Data cleaning
 # ===========================================================================
