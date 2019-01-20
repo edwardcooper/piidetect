@@ -53,20 +53,21 @@ it. In the testing text, a normal text is not intentionally repeated to insert d
 
 
 ## Word embedding training
-This package wraps the word embedding algorithm word2vec, doc2vec and fasttext for detecting PII. 
+This package wraps the word embedding algorithm **word2vec, doc2vec and fasttext** for detecting PII. 
 
 This word_embedding will allow continued training on the pre-trained model by assigning
-the model to the pre_trained option in class initialization.  
-After training the model, it will dump the word2vec model to the path assigned to 
-dump_file option (can not dump to a path if the directory does not exist)
+the model to the **pre_trained** option in class initialization.  
 
-If the pre_train is None, then the model will be trained. 
-If the pre_train model is not None, then the default is to continue training on the new model
-unless option continue_train_pre_train is specified as False. The False option will just assign 
+After training the model, it will dump the word2vec model to the path assigned to 
+**dump_file** option (can not dump to a path if the directory does not exist)
+
+If the **pre_train** is None, then the model will be trained. 
+
+If the **pre_train** model is not None, then the default is to continue training on the new model
+unless option **continue_train_pre_train** is specified as False. The False option will just assign 
 the pre_train model to be the model without training on the text. 
 
-If re_train_new_sentences is True, which is the default setting, 
-the model will be re-trained on the new sentences. 
+If **re_train_new_sentences** is True, which is the default setting, the model will be re-trained on the new sentences. 
 This will create word embedding for words not in the original vocabulary.
 This will increase the model inference time since it invovles model training. 
         
@@ -74,10 +75,11 @@ For using word2vec to predict PII data, it is recommended to update the model wi
 For fastttext, it is not necessary since it will infer from the character n-grams. The fasttext training
 is much longer than word2vec. 
 
+**size**: vector dimension for word. Must be the same as the pre_train model is that is specified.
 
-size: vector dimension for word. Must be the same as the pre_train model is that is specified.
-min_count: Ignores all words with total frequency lower than this. Use 1 for PII detection.
-workers: number of CPU cores for training
+**min_count**: Ignores all words with total frequency lower than this. Use 1 for PII detection.
+
+**workers**: number of CPU cores for training
 
 
 ```
