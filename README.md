@@ -2,6 +2,10 @@
 A package to build an end-to-end ML pipeline to detect personally identifiable information (PII) from text. This 
 package is still in early stage development. More documentations and tests are coming soon. 
 
+The entire pipeline works like this: 
+data -> cleaning -> word2vec/doc2vec/fasttext -> most dissimilar word -> word vector -> classical ML models.
+
+
 # installation
 ```
 pip install piidetect
